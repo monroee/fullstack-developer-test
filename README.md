@@ -4,9 +4,14 @@
 Backend (Node.js)
 * copy .env.example file and rename it to .env.
 * modify .env file
+* on terminal. run : npm install
 * on terminal. run : node index.js
     - csv files inside backend/data/ folder will be imported based on the database name on the file name.
     - csv file name format must be : "{Any} - {Database} - {Table Name}.csv"
     - supported databases mongodb and postgresql.
+* if data were successfully imported on the designated database,
+  a file will be created on backend/data folder named : "mongodb.init.done" and "postgresdb.init.done"
+    - deleting the said files will execute importing again on server startup.
+
 
 Frontend (Vue.js)
