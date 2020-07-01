@@ -12,6 +12,11 @@ const url = config.postgres_url + dbName;
 
 var pool = null;
 module.exports = {
+  getPool: function () {
+    pool = new Pool({ connectionString: url });
+    return pool;
+  },
+
   connect: function (callback) {
     pool = new Pool({ connectionString: url_ini });
 
