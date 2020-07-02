@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "mocha --exit"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,5 +19,8 @@
     "http-errors": "^1.8.0",
     "mongodb": "^3.5.9",
     "pg": "^8.2.1"
+  },
+  "devDependencies": {
+    "supertest": "^4.0.2"
   }
 }

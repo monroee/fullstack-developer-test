@@ -5,6 +5,7 @@
 * copy .env.example file and rename it to .env
 * modify .env file
 * on terminal. run : npm install
+* on terminal. run : npm test
 * on terminal. run : node index.js
     - server will be running on default : http://localhost:8000
     - csv files inside backend/data/ folder will be imported based on the database name on the file name.

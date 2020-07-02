@@ -43,8 +43,7 @@
     </b-table>
 
     <b-row>
-      <b-col> </b-col>
-      <b-col sm="2" md="2" lg="1" class="my-2 text-center">
+      <b-col sm="2" md="2" lg="2" class="my-2 text-center ml-auto">
         <p>Total Rows : {{ totalRows }}</p>
       </b-col>
       <b-col sm="4" md="2" lg="2" class="my-1">
@@ -55,7 +54,7 @@
           :options="pageOptions"
         ></b-form-select>
       </b-col>
-      <b-col sm="2" md="2" class="my-1">
+      <b-col sm="2" md="2" lg="4" class="my-1 ml-auto">
         <b-pagination
           v-model="currentPage"
           :total-rows="totalRows"
@@ -65,8 +64,7 @@
           class="my-0"
         ></b-pagination>
       </b-col>
-      <b-col> </b-col>
-      <b-col sm="4" md="4" lg="6" class="my-2 text-center">
+      <b-col sm="4" md="4" lg="4" class="my-2 text-center">
         <p>Total Amount Per Page : $ {{ totalAmountPerPage.toFixed(2) }}</p>
       </b-col>
     </b-row>

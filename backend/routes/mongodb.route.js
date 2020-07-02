@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoDBRoute = express.Router();
-
 let Mongodb = require("../db/mongo.db");
 
 // Get customers

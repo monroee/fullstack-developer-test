@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongodb = require("./db/mongo.db");
 const postgresdb = require("./db/postgres.db");
-const createError = require('http-errors');
+const createError = require("http-errors");
 
 const route = require("./routes/route");
 const mongoDBRoute = require("./routes/mongodb.route");
@@ -17,7 +17,9 @@ app.use("/data", route);
 app.use("/mongodb", mongoDBRoute);
 app.use("/postgresdb", postgresDBRoute);
 
-app.listen(8000, () => {
+var isInTest = typeof global.it === "function";
+
+var server = app.listen(8000, () => {
   console.log(`Server listening on http://localhost:8000`);
 });
 
@@ -33,14 +35,16 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 
-mongodb.connect(function (connected) {
-  if (connected) {
-    mongodb.initData();
-  }
-});
+module.exports = app;
 
-postgresdb.connect(function (connected) {
-  if (connected) {
-    postgresdb.initData();
-  }
-});
+  mongodb.connect(function (connected) {
+    if (connected) {
+      if (!isInTest) mongodb.initData();
+    }
+  });
+
+  postgresdb.connect(function (connected) {
+    if (connected) {
+      if (!isInTest) postgresdb.initData();
+    }
+  });
