@@ -1,6 +1,6 @@
 # fullstack-developer-test
 
-### Databases (MongoDB and PostgeSQL)
+### Databases (MongoDB and PostgreSQL)
 
 ### Backend (Node.js)
 * copy .env.example file and rename it to .env
